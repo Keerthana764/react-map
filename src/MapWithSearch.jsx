@@ -1,4 +1,3 @@
-// src/MapWithSearch.js
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
@@ -57,7 +56,7 @@ const MapWithSearch = () => {
     };
 
     return (
-        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
             {/* Search Bar */}
             <form
                 onSubmit={handleSearch}
@@ -77,7 +76,7 @@ const MapWithSearch = () => {
                     padding: '10px',
                     borderRadius: '10px',
                     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-                    backgroundColor: '#ffffff', // White background for better visibility
+                    backgroundColor: 'green', // White background for better visibility
                 }}>
                     <input
                         type="text"
@@ -90,6 +89,8 @@ const MapWithSearch = () => {
                             fontSize: '16px',
                             border: '1px solid #ccc',
                             borderRadius: '5px',
+                            backgroundColor: 'white',
+                            color: '#000'
                         }}
                     />
                     <button
@@ -97,7 +98,7 @@ const MapWithSearch = () => {
                         style={{
                             marginLeft: '10px',
                             padding: '10px',
-                            backgroundColor: '#007bff',
+                            backgroundColor: 'green',
                             color: '#fff',
                             border: 'none',
                             borderRadius: '5px',
@@ -112,18 +113,19 @@ const MapWithSearch = () => {
             {/* Map Box */}
             <div style={{
                 flexGrow: 1,
-                width: '100%',
+                width: '1200px', // Full width of the screen
                 padding: '20px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
                 <div style={{
-                    width: '80%', // Width of the map box
+
+                    width: '1200px', // Full width for the map
                     height: '100%', // Full height of the box
                     backgroundColor: '#f0f0f0', // Light grey background for contrast
                     borderRadius: '10px',
-                    overflow: 'hidden' // Ensures map doesn't overflow the box
+                    overflow: 'hidden', // Ensures map doesn't overflow the box
                 }}>
                     <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }}>
                         <TileLayer
