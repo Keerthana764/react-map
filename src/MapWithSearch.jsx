@@ -38,7 +38,7 @@ const MapWithSearch = () => {
         e.preventDefault();
 
         // Check if the user is searching for "waste scrap shops in Coimbatore"
-        if (searchValue.toLowerCase() === 'waste scrap shops in coimbatore') {
+        if (searchValue.toLowerCase()||toUpperCaase() === 'waste scrap shops in coimbatore') {
             setPosition([11.0168, 76.9558]); // Center the map to Coimbatore
             setShowMarkers(true); // Show the waste scrap shop markers
         } else {
